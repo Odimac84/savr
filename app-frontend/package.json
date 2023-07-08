@@ -1,0 +1,30 @@
+{
+  "name": "frontend-boilerplate-elm",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "prebuild": "elm-tooling install",
+    "build": "vite build",
+    "css:watch": "npx tailwindcss -i tailwind.css -o dev/tailwind.build.css --watch",
+    "dev": "elm-live src/Main.elm --open --start-page=dev.html --debug --port=4000 -- --output=dev/elm.js",
+    "start": "run-p css:watch dev",
+    "format": "npx elm-format --yes src",
+    "test:elm": "elm-test-rs"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cypress": "^9.7.0",
+    "elm-format": "^0.8.7",
+    "elm-live": "^4.0.2",
+    "elm-tooling": "^1.14.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9",
+    "vite-plugin-elm": "^2.9.0-beta.1"
+  },
+  "dependencies": {
+    "elm-debug-transformer": "^1.1.2"
+  }
+}
